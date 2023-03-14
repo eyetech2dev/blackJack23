@@ -7,19 +7,27 @@ let sum = firstCard + secondCard;
 
 let message = "";
 
+let messageEl = document.getElementById("message-el");
+let sumEl = document.getElementById("sum-el");
+let cardsEl = document.getElementById("cards-el");
+
 function startGame() {
-  console.log("start ganme");
+  console.log("start game");
+  sumEl.textContent = "Sum: " + sum;
+  cardsEl.textContent = `Cards: ${firstCard} & ${secondCard}`;
 
   if (sum <= 20) {
-    message = "Do you want to draw a new card? 🙂";
+    message = "Do you want to draw a new card?";
   } else if (sum === 21) {
-    message = "Wohoo! You've got Blackjack! 🥳";
+    message = "You've got Blackjack!";
     hasBlackJack = true;
   } else {
     message = "You're out of the game! 😭";
     isAlive = false;
   }
+  messageEl.textContent = message;
+}
 
-  // CASH OUT!
-  console.log(message);
+function newCard() {
+  console.log("pulling new card");
 }
