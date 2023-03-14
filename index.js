@@ -1,5 +1,7 @@
-let firstCard;
-let secondCard;
+let firstCard = 1;
+let secondCard = 2;
+let hasBlackJack = false;
+let isAlive = true;
 
 let sum = firstCard + secondCard;
 
@@ -7,16 +9,11 @@ if (sum < 21) {
   console.log("Do you want to draw a new card? 🙂");
 } else if (sum === 21) {
   console.log("Wohoo! You've got Blackjack! 🥳");
+  hasBlackJack = true;
 } else {
   console.log("You're out of the game! 😭");
+  isAlive = false;
 }
 
-// Check if the person is old enough to enter the nightclub (21)
-
-let age = 21;
-
-if (age <= 20) {
-  console.log("You can not enter the club!");
-} else {
-  console.log("Welcome!");
-}
+// CASH OUT!
+console.log(hasBlackJack);
